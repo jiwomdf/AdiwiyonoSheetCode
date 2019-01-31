@@ -1,45 +1,9 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
-
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-            </div>
-        </div>
-    </body>
-</html>
+@extends('layouts.master')
+@section('content')
+<h1>Katili Jiwo AW</h1>
+<br>
+<p>
+    Link Header : <a href="https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp">https://www.w3schools.com/bootstrap4/bootstrap_navbar.asp</a><br>
+    Link Footer : <a href="https://mdbootstrap.com/docs/jquery/navigation/footer/"> https://mdbootstrap.com/docs/jquery/navigation/footer/</a>
+</p>
+@stop

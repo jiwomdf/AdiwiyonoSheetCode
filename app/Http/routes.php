@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/web_programming', function () {
+    return view('web_programming');
+});
