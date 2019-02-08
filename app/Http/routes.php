@@ -18,3 +18,7 @@ Route::get('/', function () {
 Route::get('/web_programming', function () {
     return view('web_programming');
 });
+
+Route::get('/coding_dasar', function () {
+    return view('coding_dasar');
+});

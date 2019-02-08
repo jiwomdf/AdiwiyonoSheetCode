@@ -20,9 +20,9 @@
             width:100%; 
         }
     </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     {{-- jiwo --commented to make an active page, but always return to default because it return a view --}}
     {{-- <script>
@@ -43,6 +43,7 @@
             <a class="nav-item nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
             <a class="nav-item nav-link" href="{{url('/web_programming')}}">Web Programming</a>
             <a class="nav-item nav-link" href="#">Data Science</a>
+            <a class="nav-item nav-link" href="{{url('/coding_dasar')}}">Coding Dasar</a>
         </div>
     </nav>
     <!-- End Navigation Bar -->
