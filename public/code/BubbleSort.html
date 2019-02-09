@@ -1,0 +1,39 @@
+$("#btnBblSort").click(function(){
+
+    let start = StartSort();
+    let arrInput = [...arr2];
+
+    for(let j = 0; j < arrInput.length-1; j++)
+    {
+        for(let i = 0; i < arrInput.length-1; i++)
+        {
+            let nextVar = i +1;
+            let cFirst = arrInput[i].split('');
+            let cNext = arrInput[nextVar].split('');
+    
+            if(cFirst[0] == cNext[0])
+            {
+                for(let ii = 1; ii < cFirst.length; ii++)
+                {
+                    if(cFirst[ii] == cNext[ii])
+                    {
+                        //do nothing
+                    }
+                    else if(cFirst[ii] > cNext[ii])
+                    {
+                        swap(i,arrInput);
+                        break;
+                    }
+                    else
+                        break;
+                }
+            }
+            else if(cFirst[0] > cNext[0])
+            {
+                swap(i,arrInput);
+            }
+        }
+    }
+
+    EndSort(start,arrInput);
+});

@@ -15,7 +15,7 @@
         right: 0;
         height: 100%;
         
-        background-color: whitesmoke;
+        background-color: white;
         position: fixed;
         z-index:99;
         overflow-y: scroll;
@@ -27,6 +27,7 @@
     #content
     {
         margin: 10px;
+        
     }
     #bsHover:hover
     {
@@ -51,19 +52,19 @@
 <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/styles/default.min.css">
 <link rel="stylesheet" href="css/dracula.min.css">
 
-<script src="js/CodingDasar.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.14.2/highlight.min.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+
+<script src="js/CodingDasar.js"></script>
+
+
+{{-- popup here --}}
+<div id="popup" >
+    <h4 id="codeTitle"></h4>
+    <pre ><code class="hljs javascript" id="codes" ></code></pre>
+</div>
+
 <div class="content">
-
-
-    
-    {{-- popup here --}}
-    <div id="popup" >
-        <h4>The Code Will Appear Here</h4>
-        <pre id="content">
-        </pre>        
-    </div>
 
     {{-- SEARCHING SECTION --}}
     <h2>Searching</h2>
@@ -182,6 +183,8 @@
             </td>
         </tr>
     </table>
+
+    <br>
     {{-- END OF SORTING SECTION --}}
 
     {{-- TREE SECTION --}}
@@ -200,53 +203,55 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 <script>
 
+    //click outsite Js
+    $(".content").click(function() {
+        $("#codes").html("");
+        $("#codeTitle").text("")
+    });
+        
     //popup using Javascript
     function bsHover_OnClick()
     {
-        let popupDiv = document.getElementById("popup");
-        let popupContent = document.getElementById("content");
-
-        popupDiv.style.paddingRight = 0;
-
         $.ajax({
-            url: "code/BinarySearch.txt", 
-            success: 
-                function(result){
-                    $("#content").html(result);
-                }
+            url : "code/BinarySearch.html",
+            success : function(result){
+                $("#codes").html(result);
+                $("#codeTitle").text("The code will appear here")
+                document.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightBlock(block);
+                });
+            } 
         });
     }
 
     function lsHover_OnClick()
     {
-        let popupDiv = document.getElementById("popup");
-        //let popupContent = document.getElementById("content");
-
-        popupDiv.style.paddingRight = 0;
-        //popupContent.innerHTML = `Code ini berada di dalam Function Button Click Jquery(){}`;
+        $.ajax({
+            url : "code/LinearSearch.html",
+            success : function(result){
+                $("#codes").html(result);
+                $("#codeTitle").text("The code will appear here")
+                document.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightBlock(block);
+                });
+            } 
+        });
     }
 
     function bblSortHover_OnClick()
     {
-        let popupDiv = document.getElementById("popup");
-        //let popupContent = document.getElementById("content");
-
-        popupDiv.style.paddingRight = 0;
-        //popupContent.innerHTML = ``;
-    }
-
-    function btnContent_OnClick()
-    {
-        let popupDiv = document.getElementById("popup");
-
-        popupDiv.style.visibility = "hidden";
+        $.ajax({
+            url : "code/BubbleSort.html",
+            success : function(result){
+                $("#codes").html(result);
+                $("#codeTitle").text("The code will appear here")
+                document.querySelectorAll('pre code').forEach((block) => {
+                    hljs.highlightBlock(block);
+                });
+            } 
+        });
     }
     
-    
-
-
-
-
 </script>
 
 @stop

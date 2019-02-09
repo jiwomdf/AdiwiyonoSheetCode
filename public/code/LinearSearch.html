@@ -1,0 +1,29 @@
+$("#btnLinear").click(function(){
+
+    let flag = false;
+    let start = new Date().getMilliseconds();
+
+    for(let i = 0; i < arr.length; i++)
+    {
+        if(arr[i] == $('#txtLinear').val())
+        {
+            let end = new Date().getMilliseconds();
+            alert(arr[i]  + " found on index " + i + " using linear search by time " + (end - start).toString());
+            flag = true; console.log(flag);
+
+            break;
+        }
+        else
+        {
+            flag = false;
+        }
+    }
+
+    if(!flag)
+    {
+        console.log($('#txtLinear').val());
+        let end = new Date().getMilliseconds();
+        alert("item not found by time " + (end - start).toString());
+        console.log(flag);
+    }
+});

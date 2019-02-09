@@ -22,3 +22,14 @@ Route::get('/web_programming', function () {
 Route::get('/coding_dasar', function () {
     return view('coding_dasar');
 });
+
+
+Route::get('getCode/{id}', function($id) {
+    
+    // if($id == "binarySearch")
+    // {
+    //     $codes = include 'code/BinarySearch.html';
+    //     dd($codes);
+    //     return view("coding_dasar",$codes);
+    // }
+});

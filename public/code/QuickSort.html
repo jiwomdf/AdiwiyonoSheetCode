@@ -1,0 +1,57 @@
+$('#btnQuickSort').click(function(){
+
+    let start = StartSort();
+    //start function
+    let result = QuickSort(arr2);
+    EndSort(start,result);
+
+});
+
+function QuickSort(arrInput)
+{
+    /*kalau isi dari arraynya sudah tinggal 1 
+      atau tidak ada setelah recursive (finish)*/
+    if(arrInput.length < 2 )
+    {
+        return arrInput;
+    }
+
+    let pivot = arrInput[arrInput.length - 1];
+    let left = [];
+    let right = [];
+
+    //di loop sampe sebelum pivot
+    for(let i = 0; i < arrInput.length - 1; i++)
+    {
+        if(arrInput[i] < pivot)
+            left.push(arrInput[i]);
+        else
+        {
+            if(arrInput[i] == pivot)
+            {
+                leftIdx = arrInput[i].split('');
+                rightIdx = pivot.split('');
+
+                for(let ii = 1; ii < leftIdx.length; ii++)
+                {
+                    if(leftIdx[ii] > rightIdx[ii])
+                    {
+                        result.push(right.shift());
+                        break;
+                    }
+                    else if(leftIdx[ii] < rightIdx[ii])
+                    {
+                        result.push(left.shift());
+                        break;
+                    }
+                }
+            }
+            else
+                right.push(arrInput[i]);
+        }
+    }
+
+    let result = [...QuickSort(left),pivot,...QuickSort(right)];
+    
+    return result;
+}

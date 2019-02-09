@@ -1,0 +1,58 @@
+$('#btnMrgSort').click(function(){
+
+    let start = StartSort();
+
+    let result = mergerSort(arr2);
+
+    EndSort(start,result);
+});
+
+function mergerSort(arrInput)
+{
+    if(arrInput.length >= 2)
+    {
+        let middle = Math.floor(arrInput.length/2);
+        let left = arrInput.slice(0,middle);
+        let right = arrInput.slice(middle);
+
+        return merge(mergerSort(left), mergerSort(right));
+    }
+    else
+        return arrInput;
+}
+
+function merge(left,right)
+{
+    let result = [];
+
+    while(left.length && right.length)
+    {
+        leftIdx = left[0].split('');
+        rightIdx = right[0].split('');
+
+        if(leftIdx[0] < rightIdx[0])
+        {
+            result.push(left.shift());
+        }
+        else if(leftIdx[0] == rightIdx[0])
+        {
+            for(let ii = 1; ii < leftIdx.length; ii++)
+            {
+                if(leftIdx[ii] > rightIdx[ii])
+                {
+                    result.push(right.shift());
+                    break;
+                }
+                else if(leftIdx[ii] < rightIdx[ii])
+                {
+                    result.push(left.shift());
+                    break;
+                }
+            }
+        }
+        else
+            result.push(right.shift());
+    }
+
+    return result.concat(left,right);
+}

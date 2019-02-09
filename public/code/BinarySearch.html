@@ -1,46 +1,44 @@
-<code class="hljs javascript">
 $("#btnBinary").click(function(){
-let start = new Date().getMilliseconds();
-let input = $("#txtBinary").val();
+    let start = new Date().getMilliseconds();
+    let input = $("#txtBinary").val();
 
-if(BinarySearch(arr,input))
-{
-    let end = new Date().getMilliseconds();
-    alert("Found " + arr[med] + " on index " + med + " by time " + (end - start).toString())
-}
-else
-    alert("Data not found");
-
-});
-
-//function Binary Search agar bisa dipake berulang
-function BinarySearch(arr,input)
-{
-    let con = false;
-    let low = 0;
-    let high = arr2.length - 1 ;
-
-    while(low <= high)
+    if(BinarySearch(arr,input))
     {
-        let temp =  ( high - low );
-
-        //bila data ganjil
-        if(temp % 2 != 0 )
-            med = ( high - low )/2 + low - 0.5;
-        else
-            med = ( high - low )/2 + low;
-
-        if(input == arr[med])
-            return true;
-
-        //bila lebih kecil
-        if( input < arr[med])
-            high = med - 1;
-        //bila lebih besar
-        else
-            low = med + 1;
+        let end = new Date().getMilliseconds();
+        alert("Found " + arr[med] + " on index " + med + " by time " + (end - start).toString())
     }
+    else
+        alert("Data not found");
 
-    return false;
-}
-</code>
+    });
+
+    //function Binary Search agar bisa dipake berulang
+    function BinarySearch(arr,input)
+    {
+        let con = false;
+        let low = 0;
+        let high = arr2.length - 1 ;
+
+        while(low <= high)
+        {
+            let temp =  ( high - low );
+
+            //bila data ganjil
+            if(temp % 2 != 0 )
+                med = ( high - low )/2 + low - 0.5;
+            else
+                med = ( high - low )/2 + low;
+
+            if(input == arr[med])
+                return true;
+
+            //bila lebih kecil
+            if( input < arr[med])
+                high = med - 1;
+            //bila lebih besar
+            else
+                low = med + 1;
+        }
+
+        return false;
+    }

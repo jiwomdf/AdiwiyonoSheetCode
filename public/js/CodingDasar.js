@@ -22,11 +22,12 @@ function EndSort(start,arrResult)
     let end = new Date().getMilliseconds();
     alert("The Sort take time by : " + (end - start).toString());
 
+    let spanBblSort = document.getElementById("targetSort");
+    spanBblSort.innerHTML += "<td>Item : </td>";
+
     for(let i = 0; i < arrResult.length; i++)
     {
-        let spanBblSort = document.getElementById("targetSort");
         spanBblSort.innerHTML += "<td>" + arrResult[i] + "</td>";
-
     }
 }
 
