@@ -191,13 +191,13 @@
     <h2>Tree</h2>
     <br>
     <table border="1">
-        <tr>
-            <td>jiwo</td>
-            <td>willy</td>
-            <td>enrico</td>
-            <td>hengky</td>
+        <tr id="treeTable">
         </tr>
     </table>
+
+    <input type="text" id="inptTree">
+    <button id="btnAddTree">Add</button>
+    <button id="btnDeleteTree">Delete</button>
     {{-- END OF TREE SECTION --}}
 </div>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
@@ -206,7 +206,7 @@
     //click outsite Js
     $(".content").click(function() {
         $("#codes").html("");
-        $("#codeTitle").text("")
+        $("#codeTitle").text("");
     });
         
     //popup using Javascript
